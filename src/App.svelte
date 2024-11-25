@@ -1,9 +1,11 @@
 <script lang="ts">
   import svelteLogo from './assets/svelte.svg'
   import Clock from './lib/Clock.svelte'
+  import Todo from './lib/Todo.svelte';
 </script>
 
 <main class="main">
+  <div class="title">
     <div>
       <a href="https://svelte.dev" target="_blank" rel="noreferrer">
         <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
@@ -15,13 +17,17 @@
       <br />
       <a href="https://github.com/repon/svelte-sample-app" target="_blank">コードはこちら</a>
     </p>
+  </div>
 
-    <div class="items">
-      <h2>1. シンプルな時計です</h2>
-      <div class="item">
-        <Clock />
-      </div>
+    <h2>1.シンプルな時計です</h2>
+    <div class="item-center">
+      <Clock />
     </div>
+
+  <h2>2. Todoリスト</h2>
+  <div>
+    <Todo />
+  </div>
 
 </main>
 
@@ -31,6 +37,11 @@
   }
 
   .main {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .title {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,8 +56,8 @@
     font-size: 1.2rem
   }
 
-  .items {
-    padding: 2em 0;
+  .item-center {
+    text-align: center;
   }
 
 </style>
